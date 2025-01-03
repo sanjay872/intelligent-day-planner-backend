@@ -1,18 +1,23 @@
 package dayplanner.planner_service.dto;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PlanDto {
     private long id;
     private long userId;
     private String name;
     private String location;
-    private Date date;
+    private String plannedDate;
+    private String createdDate;
+    private String updatedDate;
     private String taskName;
     private boolean notify;
-    private Date notifyDate;
+    private String notifyDate;
     private boolean isCompleted;
 }
