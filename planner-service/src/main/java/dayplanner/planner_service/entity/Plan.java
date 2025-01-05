@@ -35,7 +35,12 @@ public class Plan {
     @Column(name = "plannedDate",nullable = false)
     private Instant plannedDate;
 
-    @ManyToOne()
+    @ManyToOne(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.DETACH
+    })
     @JoinColumn(name = "task_type")
     private TaskType task;
 

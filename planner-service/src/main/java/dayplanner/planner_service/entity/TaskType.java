@@ -19,6 +19,11 @@ public class TaskType {
     @Column(name = "taskName",nullable = false)
     private String taskName;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "task")
+    @OneToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.DETACH
+    },mappedBy = "task")
     private List<Plan> plan;
 }

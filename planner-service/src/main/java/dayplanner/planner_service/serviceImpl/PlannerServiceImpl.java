@@ -28,12 +28,13 @@ public class PlannerServiceImpl implements PlannerService {
     @Override
     @Transactional
     public long createPlan(Plan plan) {
-        Optional<TaskType> taskType=taskTypeRepository.findByTaskName(plan.getTask().getTaskName());
-        if(taskType.isPresent()){
-            plan.setTask(taskType.get());
-            return planRepository.save(plan).getId();
-        }
-        throw new RuntimeException("Invalid Task Type!");
+//        Optional<TaskType> taskType=taskTypeRepository.findByTaskName(plan.getTask().getTaskName());
+//        if(taskType.isPresent()){
+//            plan.setTask(taskType.get());
+//
+//        }
+        return planRepository.save(plan).getId();
+        //throw new RuntimeException("Invalid Task Type!");
     }
 
     @Override
@@ -55,14 +56,7 @@ public class PlannerServiceImpl implements PlannerService {
     public void updatePlan(Plan plan) {
         Optional<Plan> existingPlan=planRepository.findById(plan.getId());
         if(existingPlan.isPresent()){
-            Optional<TaskType> taskType=taskTypeRepository.findByTaskName(plan.getTask().getTaskName());
-            if(taskType.isPresent()) {
-                plan.setTask(taskType.get());
                 planRepository.save(plan);
-            }
-            else{
-                throw new RuntimeException("Invalid Task Type!");
-            }
         }
         else{
             throw new RuntimeException("Update Failed!");
