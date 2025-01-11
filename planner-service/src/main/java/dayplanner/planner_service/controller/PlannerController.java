@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/plan")
+@CrossOrigin("*")
 public class PlannerController {
 
     private final PlannerDtoService plannerDtoService;
