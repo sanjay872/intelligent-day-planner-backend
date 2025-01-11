@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
+import java.util.Date;
 
 @Entity
 @Table(name = "planner")
@@ -27,13 +28,16 @@ public class Plan {
     private String location;
 
     @Column(name = "createdDate",nullable = false,updatable = false)
-    private Instant createdDate;
+    private Date createdDate;
 
     @Column(name = "updatedDate",nullable = false)
-    private Instant updatedDate;
+    private Date updatedDate;
 
-    @Column(name = "plannedDate",nullable = false)
-    private Instant plannedDate;
+    @Column(name = "plannedStartDate",nullable = false)
+    private Date plannedStartDate;
+
+    @Column(name = "plannedEndDate",nullable = false)
+    private Date plannedEndDate;
 
     @ManyToOne(cascade = {
             CascadeType.PERSIST,
@@ -48,7 +52,7 @@ public class Plan {
     private boolean notify=false;
 
     @Column(name = "notifyDate",nullable = false)
-    private Instant notifyDate;
+    private Date notifyDate;
 
     @Column(name = "isCompleted",nullable = false)
     private boolean isCompleted=false;

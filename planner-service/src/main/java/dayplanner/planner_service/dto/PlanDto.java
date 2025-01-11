@@ -13,11 +13,12 @@ public class PlanDto {
     private long userId;
     private String name;
     private String location;
-    private String plannedDate;
-    private String createdDate;
-    private String updatedDate;
+    private Date plannedStartDate;
+    private Date plannedEndDate;
+    private Date createdDate;
+    private Date updatedDate;
     private String taskName;
     private boolean notify;
-    private String notifyDate;
+    private Date notifyDate;
     private boolean isCompleted;
 }

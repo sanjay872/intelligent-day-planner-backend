@@ -7,6 +7,4 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface TaskTypeRepository extends JpaRepository<TaskType,Long> {
-    Optional<TaskType> findByTaskName(String taskName);
-}
+public interface TaskTypeRepository extends JpaRepository<TaskType,Long> { }
