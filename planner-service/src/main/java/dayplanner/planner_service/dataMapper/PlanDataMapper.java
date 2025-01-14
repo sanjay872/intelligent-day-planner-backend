@@ -17,7 +17,7 @@ public interface PlanDataMapper {
 //    @Mapping(target = "plannedStartDate",source = "plannedStartDate",qualifiedByName = "convertStringToDate")
 //    @Mapping(target = "plannedEndDate",source = "plannedEndDate",qualifiedByName = "convertStringToDate")
 //    @Mapping(target = "notifyDate",source = "notifyDate",qualifiedByName = "convertStringToDate")
-    @Mapping(target = "task.taskName",source = "taskName")
+//    @Mapping(target = "task.taskName",source = "taskName")
     Plan fromDto(PlanDto planDto);
 
 
@@ -26,7 +26,7 @@ public interface PlanDataMapper {
 //    @Mapping(target = "plannedStartDate",source = "plannedStartDate",qualifiedByName = "convertDateToString")
 //    @Mapping(target = "plannedEndDate",source = "plannedEndDate",qualifiedByName = "convertDateToString")
 //    @Mapping(target = "notifyDate",source = "notifyDate",qualifiedByName = "convertDateToString")
-    @Mapping(target = "taskName",source = "task.taskName")
+//    @Mapping(target = "taskName",source = "task.taskName")
     PlanDto toDto(Plan plan);
 
 //    @Named("convertStringToDate")

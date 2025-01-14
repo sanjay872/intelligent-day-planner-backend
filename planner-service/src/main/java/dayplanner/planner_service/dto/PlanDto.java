@@ -17,7 +17,7 @@ public class PlanDto {
     private Date plannedEndDate;
     private Date createdDate;
     private Date updatedDate;
-    private String taskName;
+    private TaskTypeDto taskName;
     private boolean notify;
     private Date notifyDate;
     private boolean isCompleted;
