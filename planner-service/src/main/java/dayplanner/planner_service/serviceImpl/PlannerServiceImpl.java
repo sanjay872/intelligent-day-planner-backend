@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,5 +63,10 @@ public class PlannerServiceImpl implements PlannerService {
         else{
             throw new RuntimeException("Delete Failed!");
         }
+    }
+
+    @Override
+    public List<Plan> getPlanByUserIdAndDate(long id, Date date) {
+        return planRepository.findAllByUserIdAndPlannedDate(id,date);
     }
 }

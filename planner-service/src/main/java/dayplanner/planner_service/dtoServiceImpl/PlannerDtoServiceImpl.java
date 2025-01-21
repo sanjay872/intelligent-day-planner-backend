@@ -7,6 +7,7 @@ import dayplanner.planner_service.service.PlannerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,5 +46,10 @@ public class PlannerDtoServiceImpl implements PlannerDtoService {
     @Override
     public void deletePlanById(long id) {
         plannerService.deletePlanById(id);
+    }
+
+    @Override
+    public List<PlanDto> getPlanByUserIdAndDate(long id, Date date) {
+        return plannerService.getPlanByUserIdAndDate(id,date).stream().map(planDataMapper::toDto).collect(Collectors.toList());
     }
 }

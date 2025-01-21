@@ -33,11 +33,17 @@ public class Plan {
     @Column(name = "updatedDate",nullable = false)
     private Date updatedDate;
 
-    @Column(name = "plannedStartDate",nullable = false)
-    private Date plannedStartDate;
+    @Column(name = "plannedDate",nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date plannedDate;
 
-    @Column(name = "plannedEndDate",nullable = false)
-    private Date plannedEndDate;
+    @Column(name = "plannedStartDate",nullable = false)
+    @Temporal(TemporalType.TIME)
+    private Date plannedStartTime;
+
+    @Column(name = "plannedEndTime",nullable = false)
+    @Temporal(TemporalType.TIME)
+    private Date plannedEndTime;
 
     @ManyToOne(cascade = {
             CascadeType.PERSIST,

@@ -13,8 +13,9 @@ public class PlanDto {
     private long userId;
     private String name;
     private String location;
-    private Date plannedStartDate;
-    private Date plannedEndDate;
+    private Date plannedDate;
+    private Date plannedStartTime;
+    private Date plannedEndTime;
     private Date createdDate;
     private Date updatedDate;
     private TaskTypeDto taskName;

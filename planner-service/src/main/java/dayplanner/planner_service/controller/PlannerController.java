@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -48,4 +49,8 @@ public class PlannerController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @GetMapping("/user/{id}/date")
+    public ResponseEntity<List<PlanDto>> getPlanByDate(@PathVariable("id") long id, @RequestParam("date") Date date){
+        return new ResponseEntity<>(plannerDtoService.getPlanByUserIdAndDate(id,date),HttpStatus.OK);
+    }
 }
